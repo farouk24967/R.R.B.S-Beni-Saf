@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Club de handball R.R.B.S de Béni Saf – équipe, calendrier, galeries et inscription." />
+  <meta name="keywords" content="handball, R.R.B.S, Béni Saf, club sportif, Algérie" />
+  <title>R.R.B.S Handball Club - الرائد الرياضي بني صاف</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="website icon" href="R.R.B.S.png">
+  <style>
+    :root {
+      --primary-dark: #0b3b6b;
+      --primary-light: #9fd3ff;
+      --accent: #1aa6ad;
+      --bg: #f5f9ff;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: var(--bg);
+      color: #222;
+    }
+    header {
+      background: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    nav .logo-area a {
+      display: inline-block;
+    }
+    nav img {
+      height: 60px;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    nav li {
+      margin: 0 12px;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--primary-dark);
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* Barre de recherche */
+    .search-box {
+      display: flex;
+      align-items: center;
+    }
+    .search-box input {
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      font-size: 14px;
+      width: 180px;
+      transition: width 0.3s;
+    }
+    .search-box input:focus {
+      outline: none;
+      border-color: var(--primary-dark);
+      width: 220px;
+    }
+
+  
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 50px 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .hero-text {
+      flex: 1;
+      min-width: 280px;
+    }
+    .hero-text h1 {
+      font-size: 45px;
+      color: var(--primary-dark);
+    }
+    .hero-text span {
+      color: var(--primary-light);
+    }
+    .hero-text p {
+      margin: 20px 0;
+      line-height: 1.6;
+      color: #555;
+    }
+    .hero-text .btn {
+      display: inline-block;
+      margin-right: 10px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--primary-dark);
+      color: white;
+    }
+    .btn-outline {
+      border: 2px solid var(--primary-dark);
+      color: var(--primary-dark);
+    }
+    .btn-primary:hover {
+      background: #06284b;
+    }
+    .btn-outline:hover {
+      background: var(--primary-dark);
+      color: white;
+    }
+    .hero img {
+      width: 350px;
+      max-width: 90%;
+    }
+
+    section {
+      padding: 60px 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    h2 {
+      color: var(--primary-dark);
+      margin-bottom: 20px;
+      font-size: 28px;
+      text-align: center;
+    }
+
+    .about {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      padding: 30px;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .about-card {
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .team {
+      display: grid;
+      grid-template-areas: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .player {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+    .player .num {
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      margin: auto;
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th,
+    td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+    }
+    th {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    form {
+      display: grid;
+      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    input,
+    button {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: var(--accent);
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #ffce2a;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        padding: 15px 0;
+        z-index: 1001;
+      }
+      nav ul.active {
+        display: flex;
+      }
+      nav li {
+        margin: 8px 0;
+        text-align: center;
+      }
+      .search-box {
+        display: none;
+      }
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      .hero img {
+        margin-bottom: 20px;
+      }
+      .hero-text h1 {
+        font-size: 32px;
+      }
+      form {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo-area">
+        <a href="#"><img src="R.R.B.S.png" alt="Logo R.R.B.S Handball Club"></a>
+      </div>
+
+      <ul id="nav-menu">
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#team">Équipe</a></li>
+        <li><a href="#schedule">Calendrier</a></li>
+        <li><a href="#gallery">Galerie</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Rechercher" />
+      </div>
+
+      <button class="menu-toggle" id="menuToggle">☰</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Bienvenue au club <span>R.R.B.S</span></h1>
+      <p>Le club de handball de Beni Saf — fierté, travail d'équipe et passion. Suivez nos matchs et rejoignez-nous pour partager l'esprit sportif.</p>
+      <a href="#schedule" class="btn btn-primary">Prochain match</a>
+      <a href="#contact" class="btn btn-outline">Rejoindre l'équipe</a>
+    </div>
+    <img src="R.R.B.S.gif" alt="Logo du club R.R.B.S" />
+  </section>
+
+  <section id="about" class="about">
+    <h2>À propos du club</h2>
+    <p>Fondé à Béni Saf, le club R.R.B.S Handball vise à promouvoir le sport et les valeurs d'esprit d'équipe, de respect et de discipline. Nous accueillons toutes les catégories d'âge.</p>
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>🏋️ Entraîneurs</h3>
+        <p>Coachs qualifiés et passionnés de handball.</p>
+      </div>
+      <div class="about-card">
+        <h3>🏟️ Infrastructures</h3>
+        <p>Nos entraînements se déroulent a la salle Yousfi Said de Béni Saf.</p>
+      </div>
+      <div class="about-card">
+        <h3>🔥 Valeurs</h3>
+        <p>Discipline, travail d'équipe, respect et performance.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="team">
+    <h2>Nos Joueurs</h2>
+    <div class="team" id="teamList">
+      <div class="player" data-name="" data-position="Ailier Droit">
+        <div class="num">7</div>
+        <h4></h4>
+        <p>Ailier Droit</p>
+      </div>
+      <div class="player" data-name="" data-position="Arrière Gauche">
+        <div class="num">11</div>
+        <h4></h4>
+        <p>Arrière Gauche</p>
+      </div>
+      <div class="team" id="teamList">
+      <div class="player" data-name="" data-position="Ailier Gauche">
+        <div class="num">10</div>
+        <h4></h4>
+        <p>Ailier Gauche</p>
+      </div>
+      <div class="player" data-name="" data-position="Arrière Droit">
+        <div class="num">8</div>
+        <h4></h4>
+        <p>Arrière Droit</p>
+      </div>
+      <div class="player" data-name="" data-position="Pivot">
+        <div class="num">5</div>
+        <h4></h4>
+        <p>Pivot</p>
+      </div>
+      <div class="player" data-name="" data-position="Gardien">
+        <div class="num">1</div>
+        <h4></h4>
+        <p>Gardien</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="schedule">
+    <h2>Calendrier des Matchs</h2>
+    <table id="matchTable">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Adversaire</th>
+          <th>Lieu</th>
+          <th>Heure</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-opponent="US Oran">
+          <td>27/09/2025</td>
+          <td>US Oran</td>
+          <td>Salle OMS Oran</td>
+          <td>15:00</td>
+        </tr>
+        <tr data-opponent="MC Sidi Bel Abbès">
+          <td>10 Sept 2025</td>
+          <td>MC Sidi Bel Abbès</td>
+          <td>Salle OMS Beni-Saf</td>
+          <td>15:00</td>
+        </tr>
+        <tr data-opponent="CRB">
+          <td>20 Sept 2025</td>
+          <td></td>
+          <td>Extérieur</td>
+          <td>16:00</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="gallery">
+    <h2>Galerie</h2>
+    <div class="gallery">
+      <img src="" alt="Joueur en action lors d'un match contre US Oran" />
+      <img src="" alt="Célébration après un but marqué" />
+      <img src="" alt="Entraînement collectif au gymnase municipal" />
+      <img src="" alt="Photo d'équipe officielle du R.R.B.S Handball Club" />
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact & Rejoindre</h2>
+    <form id="joinForm">
+      <input type="text" placeholder="Nom complet" required />
+      <input type="number" placeholder="Âge" min="6" max="20" required />
+      <input type="tel" placeholder="Téléphone" required />
+      <input type="text" placeholder="Position souhaitée"required />
+      <button type="submit">Envoyer</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 R.R.B.S Handball Club - Tous droits réservés</p>
+    <p>Créé avec par Farouk, style professionnel et inspiré des meilleurs.</p>
+  </footer>
+
+
+ 
+</body>
+</html>
+  
+</body>
+</html>
